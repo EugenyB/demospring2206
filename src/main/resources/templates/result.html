@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Expressions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>All Expressions</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Expression</th>
+            <th>Result</th>
+            <th>delete</th>
+            <th>edit</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="expr : ${expressions}">
+                <td th:text="${expr.id}"></td>
+                <td th:text="${expr.expr}"></td>
+                <td th:text="${expr.result}"></td>
+                <td><a th:href="@{/delete/{id}(id=${expr.id})}">delete</a></td>
+                <td><a th:href="@{/edit/{id}(id=${expr.id})}">edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

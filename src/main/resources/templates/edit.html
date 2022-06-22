@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit expression</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${expression.id})}" th:object="${expression}" method="post">
+    <label for="expr">Expression</label>
+    <input type="text" th:field="*{expr}" id="expr">
+    <input type="submit" value="Update Expression">
+</form>
+</body>
+</html>
